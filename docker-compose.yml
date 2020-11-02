@@ -1,0 +1,13 @@
+version: '1.0'
+services:
+  postgres-diagrams:
+    container_name: postgres-diagrams
+    image: postgres-diagrams
+    restart: always
+    build: .
+    tty: true
+    volumes:
+      - ./src:/usr/local/postgres-diagrams/src
+      - ./resource:/usr/local/postgres-diagrams/resource
+      - ./output:/usr/local/postgres-diagrams/output
+      - ./tests:/usr/local/postgres-diagrams/tests
